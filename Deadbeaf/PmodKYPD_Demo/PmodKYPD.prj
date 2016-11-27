@@ -1,0 +1,3 @@
+verilog work "DisplayController.v"
+verilog work "Decoder.v"
+verilog work "PmodKYPD.v"
