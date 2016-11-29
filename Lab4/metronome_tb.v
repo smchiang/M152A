@@ -1,4 +1,4 @@
-`timescale 1us / 1ps
+`timescale 10ns / 1ps
 module metronome_tb;
 
 	reg clk;
@@ -21,6 +21,7 @@ module metronome_tb;
 
 	initial
 	begin
+		#1
 		clk = 0;
 		btnUp = 0;
 		btnDown = 0;
@@ -32,15 +33,15 @@ module metronome_tb;
 		clk = ~clk;
 	end
 
-	always
-	begin
-		#2000000
-		btnUp = 1;
-		#1000
-		btnUp = 0;
-	end
+	// always
+	// begin
+	// 	#2000000
+	// 	btnUp = 1;
+	// 	#1000
+	// 	btnUp = 0;
+	// end
 	
 	initial
-		#60000000 $finish; 
+		#1000000000 $finish; 
 
 endmodule

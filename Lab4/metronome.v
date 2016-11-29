@@ -41,85 +41,84 @@ module metronome(
 	// Completely independent from BPM. Outputs a 250 Hz frequency. 
 	output reg 			fast_clk;
 
-	// Stores the maximum count needed to hit 1/30 of the desired BPM. Large enough to hold
-	// a value of 1,000,000, corresponding to a 1 BPM.
-	// Note that while 100MHz corresponds to a count of 60,000,000, the count holds the
-	// value needed to FLIP the clock, not cycle it. 
-	// Thus, the count is 60,000,000 / 2 / 30 / bpm.
-	reg [25:0] max_looper_count;
+	// Stores the maximum count needed to hit 1/100 of the desired BPM. 
+	// Note: To obtain this number, divide 60000000 by your desired BPM.
+	reg [31:0] max_looper_count;
 	// Stores the current actual looper count.
-	reg [25:0] current_looper_count;
+	reg [31:0] current_looper_count;
 
 	// Stores the BPM count. BPM ticks off the looper clock, thus max 30
 	reg [7:0] bpm_count;
 
 	// Stores the count for the fast clock. At 250Hz, the max count is 2000
-	reg [11:0] fast_count;
+	reg [18:0] fast_count;
 
 	initial 
 	begin
-		current_bpm <= 60; //A default of 100 is typical for a lot of music. 
-		beat_clk <= 0;
-		looper_clk <= 0;
-		fast_clk <= 0;
+		//A default of 100 is typical for a lot of music. 
+		// 60 is for testing.
+		current_bpm = 60; 
+		beat_clk = 0;
+		looper_clk = 0;
+		fast_clk = 0;
 
-		max_looper_count <= 10000;
-		current_looper_count <= 1;
-		bpm_count <= 1;
-		fast_count <= 1;
+		max_looper_count = 500000;
+		current_looper_count = 1;
+		bpm_count = 1;
+		fast_count = 1;
 	end
 
 	// Increase BPM and associated max count if btnUp
 	always @ (posedge btnUp) 
 	begin
-		current_bpm <= current_bpm + 1;
+		current_bpm = current_bpm + 1;
 		if (current_bpm == 0) current_bpm = 255;
-		max_looper_count <= (30000000 / current_bpm);
+		max_looper_count = (30000000 / current_bpm);
 	end
 
 	// Increase BPM and associated max count if
 	always @ (posedge btnDown)
 	begin
-		current_bpm <= current_bpm - 1;
+		current_bpm = current_bpm - 1;
 		if (current_bpm == 0) current_bpm = 1;
-		max_looper_count <= (30000000 / current_bpm);
+		max_looper_count = (30000000 / current_bpm);
 	end
 
 	always @ (posedge clk) 
 	begin
 		// Looper clock
-		if (current_looper_count <= max_looper_count)
+		if (current_looper_count < max_looper_count)
 		begin
-			current_looper_count <= current_looper_count + 1;
+			current_looper_count = current_looper_count + 1;
 		end
 		else 
 		begin
-			current_looper_count <= 1;
-			looper_clk <= ~looper_clk;
+			current_looper_count = 1;
+			looper_clk = ~looper_clk;
 		end
 		// Fast clock
-		if (fast_count < 2000)
+		if (fast_count < 200000)
 		begin
-			fast_count <= fast_count + 1;
+			fast_count = fast_count + 1;
 		end
 		else
 		begin
-			fast_count <= 1;
-			fast_clk <= ~fast_clk;
+			fast_count = 1;
+			fast_clk = ~fast_clk;
 		end
 	end
 
 	always @ (posedge looper_clk)
 	begin
 		// Beat clock
-		if (bpm_count < 30)
+		if (bpm_count < 100)
 		begin
-			bpm_count <= bpm_count + 1;
+			bpm_count = bpm_count + 1;
 		end
 		else 
 		begin
-			bpm_count <= 1;
-			beat_clk <= ~beat_clk;
+			bpm_count = 1;
+			beat_clk = ~beat_clk;
 		end
 	end
 
