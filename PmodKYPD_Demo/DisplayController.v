@@ -24,6 +24,7 @@ module DisplayController(
 	//input
     DispVal,
 	 DispVal2,
+	 DispVal3,
 	 isRecord,
 	 fclk,
 	 bclk,
@@ -37,7 +38,8 @@ module DisplayController(
 // ==============================================================================================
 
     input [3:0] DispVal;			// Higher digit output from decimal converter
-	 input [3:0] DispVal2;			//	Lower digit output
+	 input [3:0] DispVal2;			//	Middle digit output
+	 input [3:0] DispVal3;			//	Lower digit output
 	 input		 isRecord;			// are we currently recording?
 	 input		 fclk;				// Fast clock for anode cycling
 	 input		 bclk;				// Beat clock from metronome
@@ -50,7 +52,7 @@ module DisplayController(
 // ==============================================================================================
 	
 	// Output wires and registers
-	wire [3:0] anode;
+	reg [3:0] anode;
 	reg [6:0] segOut;
 	
 	//Tracking anode
@@ -98,6 +100,8 @@ module DisplayController(
 	initial
 	begin
 		anodeCount <= 0;
+		//anode <= 4'b1110;
+		//segOut <= 7'b0111111;
 	end
 	
 	
@@ -106,22 +110,25 @@ module DisplayController(
 	// Determines cathode pattern
 	//   to display digit on SSD
 	//------------------------------
-	always @(fclk)
+	always @(posedge fclk)
 	begin
 		//cycle through anodeCount
-		if (anodeCount == 3) begin
-			anodeCount = 0;
-		end else begin
-			anodeCount = anodeCount + 1;
+		if (anodeCount == 3)
+		begin
+			anodeCount <= 0;
+		end 
+		else 
+		begin
+			anodeCount <= anodeCount + 1;
 		end
 	
-		anode <= ~(4'b0001 << anodeCount);
+		anode = ~(4'b0001 << anodeCount);
 		
 		//if beat clock is high, display bpm
-		if (bclk)
+		if (bclk == 1)
 		begin
 			//check anodeCount to display a number
-			if (anodeCount == 1) //high number
+			if (anodeCount == 2) //high number
 			begin
 				case (DispVal)
 					4'h0 : segOut <= 7'b1111111;  // 0 - don't display anything
@@ -136,8 +143,8 @@ module DisplayController(
 					4'h9 : segOut <= 7'b0010000;  // 9
 					default : segOut <= 7'b0111111;
 				endcase
-			end
-			else if (anodeCount == 0) //low number
+			end //end high number check
+			if (anodeCount == 1) //mid number
 			begin
 				case (DispVal2)
 					4'h0 : segOut <= 7'b1000000;  // 0
@@ -152,9 +159,28 @@ module DisplayController(
 					4'h9 : segOut <= 7'b0010000;  // 9
 					default : segOut <= 7'b0111111;
 				endcase
-			end
-			
-		end
+			end //end mid number check
+			else if (anodeCount == 0) //low number
+			begin
+				case (DispVal3)
+					4'h0 : segOut <= 7'b1000000;  // 0
+					4'h1 : segOut <= 7'b1111001;  // 1
+					4'h2 : segOut <= 7'b0100100;  // 2
+					4'h3 : segOut <= 7'b0110000;  // 3
+					4'h4 : segOut <= 7'b0011001;  // 4
+					4'h5 : segOut <= 7'b0010010;  // 5
+					4'h6 : segOut <= 7'b0000010;  // 6
+					4'h7 : segOut <= 7'b1111000;  // 7
+					4'h8 : segOut <= 7'b0000000;  // 8
+					4'h9 : segOut <= 7'b0010000;  // 9
+					default : segOut <= 7'b0111111;
+				endcase
+			end //end low number check
+			else //other spot empty	
+			begin
+				segOut <= 7'b1111111;
+			end //end other number check
+		end //end beat clock high
 		else if (isRecord == 1) //is recording, bpm clock is low
 		begin
 			//if anodeCount = 2, display r
@@ -172,34 +198,15 @@ module DisplayController(
 			begin
 				segOut <= 7'b1110000;
 			end
-		end
+			else //other spot empty	
+			begin
+				segOut <= 7'b1111111;
+			end
+		end // end bpm clock low
 		else //not recording, just low bpm clock
 		begin
-			segOut <= 7'b1111111; //display -
+			segOut <= 7'b0111111; //display -
 		end
-		/*
-			case (DispVal)
-
-					4'h0 : segOut <= 7'b1000000;  // 0
-					4'h1 : segOut <= 7'b1111001;  // 1
-					4'h2 : segOut <= 7'b0100100;  // 2
-					4'h3 : segOut <= 7'b0110000;  // 3
-					4'h4 : segOut <= 7'b0011001;  // 4
-					4'h5 : segOut <= 7'b0010010;  // 5
-					4'h6 : segOut <= 7'b0000010;  // 6
-					4'h7 : segOut <= 7'b1111000;  // 7
-					4'h8 : segOut <= 7'b0000000;  // 8
-					4'h9 : segOut <= 7'b0010000;  // 9
-					4'hA : segOut <= 7'b0001000; 	// A
-					4'hB : segOut <= 7'b0000011;	// B
-					4'hC : segOut <= 7'b1000110;	// C
-					4'hD : segOut <= 7'b0100001;	// D
-					4'hE : segOut <= 7'b0000110;	// E
-					4'hF : segOut <= 7'b0001110;	// F
-					default : segOut <= 7'b0111111;
-					
-			endcase
-			*/
-	end
+	end //end always
 
 endmodule
