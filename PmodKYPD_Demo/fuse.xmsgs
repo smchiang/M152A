@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/DispCtrlTB.v" Line 41: Target &lt;<arg fmt="%s" index="1">anode</arg>&gt; of concurrent assignment or output port connection should be a net type.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/DispCtrlTB.v" Line 42: Target &lt;<arg fmt="%s" index="1">segOut</arg>&gt; of concurrent assignment or output port connection should be a net type.
+</msg>
+
 </messages>
 

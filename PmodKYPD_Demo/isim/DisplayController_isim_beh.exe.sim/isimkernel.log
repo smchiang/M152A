@@ -1,0 +1,29 @@
+Command line:
+   DisplayController_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60869
+
+Wed Nov 30 05:20:15 2016
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 357.315 Meg
+
+ Total Signals          : 18
+ Total Nets             : 35
+ Total Signal Drivers   : 7
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 10
+ Total Traceable Variables  : 21
+ Total Scalar Nets and Variables : 130
+Total Line Count : 72
+
+ Total Simulation Time: 0.046875 sec
+
+ Current Memory Usage: 357.315 Meg
+
+Wed Nov 30 05:20:21 2016
+
