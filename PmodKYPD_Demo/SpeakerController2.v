@@ -96,6 +96,7 @@ module NewSpeakerController(
 		end
 		
 		//read from sound files
+		/*
 		soundFile[0] = $readmemh("sound0.raw");
 		soundFile[1] = $readmemh("sound1.raw");
 		soundFile[2] = $readmemh("sound2.raw");
@@ -112,6 +113,24 @@ module NewSpeakerController(
 		soundFile[13] = $readmemh("soundD.raw");
 		soundFile[14] = $readmemh("soundE.raw");
 		soundFile[15] = $readmemh("soundF.raw");
+		*/
+		
+		$readmemh("sound0.raw", soundFile[0]);
+		$readmemh("sound1.raw", soundFile[1]);
+		$readmemh("sound2.raw", soundFile[2]);
+		$readmemh("sound3.raw", soundFile[3]);
+		$readmemh("sound4.raw", soundFile[4]);
+		$readmemh("sound5.raw", soundFile[5]);
+		$readmemh("sound6.raw", soundFile[6]);
+		$readmemh("sound7.raw", soundFile[7]);
+		$readmemh("sound8.raw", soundFile[8]);
+		$readmemh("sound9.raw", soundFile[9]);
+		$readmemh("soundA.raw", soundFile[10]);
+		$readmemh("soundB.raw", soundFile[11]);
+		$readmemh("soundC.raw", soundFile[12]);
+		$readmemh("soundD.raw", soundFile[13]);
+		$readmemh("soundE.raw", soundFile[14]);
+		$readmemh("soundF.raw", soundFile[15]);
 	end
 	
 	always @ (posedge clk)

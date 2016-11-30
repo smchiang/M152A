@@ -97,15 +97,15 @@ module NewSpeakerController(
 		
 		//read from sound files
 		soundFile[0] = $readmemh("sound0.raw");
-		soundFile[1] = $readmemh("sound1.raw");
-		soundFile[2] = $readmemh("sound2.raw");
-		soundFile[3] = $readmemh("sound3.raw");
-		soundFile[4] = $readmemh("sound4.raw");
-		soundFile[5] = $readmemh("sound5.raw");
-		soundFile[6] = $readmemh("sound6.raw");
-		soundFile[7] = $readmemh("sound7.raw");
-		soundFile[8] = $readmemh("sound8.raw");
-		soundFile[9] = $readmemh("sound9.raw");
+		soundFile[1] = $readmemh("soundA.raw");
+		soundFile[2] = $readmemh("soundB.raw");
+		soundFile[3] = $readmemh("soundC.raw");
+		soundFile[4] = $readmemh("soundD.raw");
+		soundFile[5] = $readmemh("soundE.raw");
+		soundFile[6] = $readmemh("soundF.raw");
+		soundFile[7] = $readmemh("sound0.raw");
+		soundFile[8] = $readmemh("soundA.raw");
+		soundFile[9] = $readmemh("soundB.raw");
 		soundFile[10] = $readmemh("soundA.raw");
 		soundFile[11] = $readmemh("soundB.raw");
 		soundFile[12] = $readmemh("soundC.raw");

@@ -1,0 +1,24 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpkctrlTB_isim_beh.exe -prj C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpkctrlTB_beh.prj work.SpkctrlTB work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" into library work
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 118: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 119: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 120: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 121: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 122: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 123: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 124: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 125: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 126: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 127: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 128: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 129: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 130: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 131: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 132: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:1280 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 133: Second argument of $readmemh must be a memory
+ERROR:HDLCompiler:598 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v" Line 21: Module <NewSpeakerController> ignored due to previous errors.
+Verilog file C:/Users/Sabrina/Documents/CS M152A Final/M152A/PmodKYPD_Demo/SpeakerController2.v ignored due to errors
