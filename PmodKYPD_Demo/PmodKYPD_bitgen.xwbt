@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=E:\Deadbeaf\PmodKYPD_Demo\PmodKYPD.ncd
-OUTFILE=E:\Deadbeaf\PmodKYPD_Demo\PmodKYPD.bit
+INFILE=C:\Users\Sabrina\Documents\CS M152A Final\M152A\PmodKYPD_Demo\PmodKYPD.ncd
+OUTFILE=C:\Users\Sabrina\Documents\CS M152A Final\M152A\PmodKYPD_Demo\PmodKYPD.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=E:\Deadbeaf\PmodKYPD_Demo
-LICENSE=ISE
-USER_INFO=203015155_203016297_210565169_068
+WORKINGDIR=C:\Users\Sabrina\Documents\CS M152A Final\M152A\PmodKYPD_Demo
+LICENSE=WebPack
+USER_INFO=211248443_0_0_030
