@@ -35,7 +35,7 @@ module Decoder(
     input clk;						// 100MHz onboard clock
     input [3:0] Row;				// Rows on KYPD
     output [3:0] Col;			// Columns on KYPD
-    output [3:0] DecodeOut;	// Output data
+    output [15:0] DecodeOut;	// Output data
 
 // ==============================================================================================
 // 							  		Parameters, Regsiters, and Wires
@@ -43,7 +43,7 @@ module Decoder(
 	
 	// Output wires and registers
 	reg [3:0] Col;
-	reg [3:0] DecodeOut;
+	reg [15:0] DecodeOut;
 	
 	// Count register
 	reg [19:0] sclk;
@@ -74,9 +74,10 @@ c_scale CS (
 // ==============================================================================================
 // 												Implementation
 // ==============================================================================================
-
+	
 	always @(posedge clk) begin
-
+			DecodeOut <= 0;
+			
 			// 1ms
 			if (sclk == 20'b00011000011010100000) begin
 				//C1
@@ -87,20 +88,24 @@ c_scale CS (
 			// check row pins
 			else if(sclk == 20'b00011000011010101000) begin
 				//R1
-				if (Row == 4'b0111) begin
-					DecodeOut <= 4'b0001;		//1
+				if (Row[3] == 0) begin
+					//DecodeOut <= 4'b0001;		//1
+					DecodeOut[1] <= 1;
 				end
 				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b0100; 		//4
+				if(Row[2] == 0) begin
+					//DecodeOut <= 4'b0100; 		//4
+					DecodeOut[4] <= 1;
 				end
 				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b0111; 		//7
+				if(Row[1] == 0) begin
+					//DecodeOut <= 4'b0111; 		//7
+					DecodeOut[7] <= 1;
 				end
 				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b0000; 		//0
+				if(Row[0] == 0) begin
+					//DecodeOut <= 4'b0000; 		//0
+					DecodeOut[0] <= 1;
 				end
 				sclk <= sclk + 1'b1;
 			end
@@ -115,20 +120,24 @@ c_scale CS (
 			// check row pins
 			else if(sclk == 20'b00110000110101001000) begin
 				//R1
-				if (Row == 4'b0111) begin
-					DecodeOut <= 4'b0010; 		//2
+				if (Row[3] == 0) begin
+					//DecodeOut <= 4'b0010; 		//2
+					DecodeOut[2] <= 1;
 				end
 				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b0101; 		//5
+				if(Row[2] == 0) begin
+					//DecodeOut <= 4'b0101; 		//5
+					DecodeOut[5] <= 1;
 				end
 				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b1000; 		//8
+				if(Row[1] == 0) begin
+					//DecodeOut <= 4'b1000; 		//8
+					DecodeOut[8] <= 1;
 				end
 				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b1111; 		//F
+				if(Row[1] == 0) begin
+					//DecodeOut <= 4'b1111; 		//F
+					DecodeOut[15] <= 1;
 				end
 				sclk <= sclk + 1'b1;
 			end
@@ -143,20 +152,24 @@ c_scale CS (
 			// check row pins
 			else if(sclk == 20'b01001001001111101000) begin
 				//R1
-				if(Row == 4'b0111) begin
-					DecodeOut <= 4'b0011; 		//3	
+				if(Row[3] == 0) begin
+					//DecodeOut <= 4'b0011; 		//3	
+					DecodeOut[3] <= 1;
 				end
 				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b0110; 		//6
+				if(Row[2] == 0) begin
+					//DecodeOut <= 4'b0110; 		//6
+					DecodeOut[6] <= 1;
 				end
 				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b1001; 		//9
+				if(Row[1] == 0) begin
+					//DecodeOut <= 4'b1001; 		//9
+					DecodeOut[9] <= 1;
 				end
 				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b1110; 		//E
+				if(Row[0] == 0) begin
+					//DecodeOut <= 4'b1110; 		//E
+					DecodeOut[14] <= 1;
 				end
 
 				sclk <= sclk + 1'b1;
@@ -172,20 +185,24 @@ c_scale CS (
 			// Check row pins
 			else if(sclk == 20'b01100001101010001000) begin
 				//R1
-				if(Row == 4'b0111) begin
-					DecodeOut <= 4'b1010; //A
+				if(Row[3] == 0) begin
+					//DecodeOut <= 4'b1010; //A
+					DecodeOut[10] <= 1;
 				end
 				//R2
-				else if(Row == 4'b1011) begin
-					DecodeOut <= 4'b1011; //B
+				if(Row[2] == 0) begin
+					//DecodeOut <= 4'b1011; //B
+					DecodeOut[11] <= 1;
 				end
 				//R3
-				else if(Row == 4'b1101) begin
-					DecodeOut <= 4'b1100; //C
+				if(Row[1] == 0) begin
+					//DecodeOut <= 4'b1100; //C
+					DecodeOut[12] <= 1;
 				end
 				//R4
-				else if(Row == 4'b1110) begin
-					DecodeOut <= 4'b1101; //D
+				if(Row[0] == 0) begin
+					//DecodeOut <= 4'b1101; //D
+					DecodeOut[13] <= 1;
 				end
 				sclk <= 20'b00000000000000000000;
 			end
