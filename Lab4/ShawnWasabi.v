@@ -150,11 +150,19 @@ module ShawnWasabi(
 		.output_looper_vector(looperVector)
 	);
 
+	wire hundreds; 
+	assign hundreds = current_bpm / 100;
+	wire tens; 
+	assign tens = (current_bpm - ((current_bpm / 100) * 100)) / 10;
+	wire ones;
+	assign ones = current_bpm % 10;
+
 	// Create the module that displays BPM
 	DisplayController(
 		//input
-		.DispVal(),
-		.DispVal2(),
+		.DispVal(hundreds),
+		.DispVal2(tens),
+		.DispVal3(ones),
 		.isRecord(recordSwitch),
 		.fclk(fast_clk),
 		.bclk(beat_clk),
