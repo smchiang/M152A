@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "E:/Lab4/speaker_isim_beh.exe" -prj "E:/Lab4/speaker_beh.prj" "work.speaker" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Micro/Dropbox/CSM152A/Lab4/M152A/Lab4/looper_tb_isim_beh.exe" -prj "C:/Users/Micro/Dropbox/CSM152A/Lab4/M152A/Lab4/looper_tb_beh.prj" "work.looper_tb" "work.glbl" 
