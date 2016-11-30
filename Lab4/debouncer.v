@@ -28,9 +28,9 @@ module debouncer(
 	out
 	);
 	
-	input in;
+	input [10:0] in;
 	input clock;
-	output reg out;
+	output reg [10:0] out;
 	
 	always @ (posedge clock)
 		out <= in;
