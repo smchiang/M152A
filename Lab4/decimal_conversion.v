@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    14:48:48 11/16/2016 
+// Create Date:    03:53:07 11/30/2016 
 // Design Name: 
-// Module Name:    speaker 
+// Module Name:    decimal_conversion 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,31 +18,21 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module speaker(
-	clk,
-	JC
-   );
+module decimal_conversion(
+	//Input (max value of 99)
+	number,
+	//Output
+	lowerDigit,
+	upperDigit
+	);
 	
-	input clk;
-	output reg [7:0]	JC;
+	input [7:0] number;
 	
-	reg [31:0] counter;
+	output wire [3:0] lowerDigit;
+	output wire [3:0] upperDigit;
 	
-	initial 
-	begin
-	counter <= 0;
-	JC <= 8'b11111111;
-	end
-	
-	always @ (posedge clk)
-	begin
-		counter <= counter + 1;
-		if (counter == 214517)
-		begin
-			JC <= ~JC;
-			counter <= 0;
-		end
-	end
-
+	assign lowerDigit = number % 10;
+	assign upperDigit = number / 10;
 
 endmodule
+
