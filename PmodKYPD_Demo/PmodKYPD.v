@@ -97,7 +97,7 @@ module PmodKYPD(
 	//-----------------------------------------------
 	
 	
-	
+	/*
 	SpeakerController spkctrl (
 		.numCode(Decode),
 		.clk_a(clk_a),
@@ -109,4 +109,6 @@ module PmodKYPD(
 		.clk_g(clk_g),
 		.spk(JA)
 	);
+	
+	*/
 endmodule
