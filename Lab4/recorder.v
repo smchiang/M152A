@@ -47,7 +47,7 @@ module recorder(
 	output reg [102400:0] output_memory;
 	// Stores the count for which memory base we're talking about. 
 	// 16 measure maximum * 4 beats per measure * 100 ticks per beat = 6400 max
-	output reg [32:0] output_memory_count;
+	output reg [31:0] output_memory_count;
 	// same as output_bank_number, but updates constantly, as opposed to just 
 	// when output is ready.
 	output reg [6:0] output_last_switch;

@@ -10,7 +10,7 @@ module recorder_tb;
 	wire output_ready;
 	wire [6:0] output_bank_number;
 	wire [102400:0] output_memory;
-	wire [32:0] output_memory_count;
+	wire [31:0] output_memory_count;
 	wire [6:0] output_last_switch;
 
 

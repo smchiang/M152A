@@ -22,6 +22,7 @@ module metronome(
 	clk, // 100 MHz system clock
 	btnUp,
 	btnDown,
+
 	current_bpm,
 	beat_clk,
 	looper_clk,
@@ -34,7 +35,7 @@ module metronome(
 
 	// 255 max is perfectly reasonable.
 	output reg [7:0] 	current_bpm; 
-	// Outputs a tick at every 30th of a beat, allowing for off beat recording.
+	// Outputs a tick at every 100th of a beat, allowing for off beat recording.
 	output reg 			looper_clk;
 	// Outputs a tick at every beat.
 	output reg 			beat_clk;
@@ -50,7 +51,7 @@ module metronome(
 	// Stores the BPM count. BPM ticks off the looper clock, thus max 30
 	reg [7:0] bpm_count;
 
-	// Stores the count for the fast clock. At 250Hz, the max count is 2000
+	// Stores the count for the fast clock. At 250Hz, the max count is 200000
 	reg [18:0] fast_count;
 
 	initial 
