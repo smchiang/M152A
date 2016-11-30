@@ -99,9 +99,9 @@ module DisplayController(
 	//assign anode = 4'b1110;
 	initial
 	begin
-		anodeCount <= 0;
-		//anode <= 4'b1110;
-		//segOut <= 7'b0111111;
+		anodeCount = 0;
+		anode = 4'b1110;
+		//segOut = 7'b0111111;
 	end
 	
 	
@@ -115,11 +115,11 @@ module DisplayController(
 		//cycle through anodeCount
 		if (anodeCount == 3)
 		begin
-			anodeCount <= 0;
+			anodeCount = 0;
 		end 
 		else 
 		begin
-			anodeCount <= anodeCount + 1;
+			anodeCount = anodeCount + 1;
 		end
 	
 		anode = ~(4'b0001 << anodeCount);
@@ -131,54 +131,54 @@ module DisplayController(
 			if (anodeCount == 2) //high number
 			begin
 				case (DispVal)
-					4'h0 : segOut <= 7'b1111111;  // 0 - don't display anything
-					4'h1 : segOut <= 7'b1111001;  // 1
-					4'h2 : segOut <= 7'b0100100;  // 2
-					4'h3 : segOut <= 7'b0110000;  // 3
-					4'h4 : segOut <= 7'b0011001;  // 4
-					4'h5 : segOut <= 7'b0010010;  // 5
-					4'h6 : segOut <= 7'b0000010;  // 6
-					4'h7 : segOut <= 7'b1111000;  // 7
-					4'h8 : segOut <= 7'b0000000;  // 8
-					4'h9 : segOut <= 7'b0010000;  // 9
-					default : segOut <= 7'b0111111;
+					4'h0 : segOut = 7'b1111111;  // 0 - don't display anything
+					4'h1 : segOut = 7'b1111001;  // 1
+					4'h2 : segOut = 7'b0100100;  // 2
+					4'h3 : segOut = 7'b0110000;  // 3
+					4'h4 : segOut = 7'b0011001;  // 4
+					4'h5 : segOut = 7'b0010010;  // 5
+					4'h6 : segOut = 7'b0000010;  // 6
+					4'h7 : segOut = 7'b1111000;  // 7
+					4'h8 : segOut = 7'b0000000;  // 8
+					4'h9 : segOut = 7'b0010000;  // 9
+					default : segOut = 7'b0111111;
 				endcase
 			end //end high number check
 			if (anodeCount == 1) //mid number
 			begin
 				case (DispVal2)
-					4'h0 : segOut <= 7'b1000000;  // 0
-					4'h1 : segOut <= 7'b1111001;  // 1
-					4'h2 : segOut <= 7'b0100100;  // 2
-					4'h3 : segOut <= 7'b0110000;  // 3
-					4'h4 : segOut <= 7'b0011001;  // 4
-					4'h5 : segOut <= 7'b0010010;  // 5
-					4'h6 : segOut <= 7'b0000010;  // 6
-					4'h7 : segOut <= 7'b1111000;  // 7
-					4'h8 : segOut <= 7'b0000000;  // 8
-					4'h9 : segOut <= 7'b0010000;  // 9
-					default : segOut <= 7'b0111111;
+					4'h0 : segOut = 7'b1000000;  // 0
+					4'h1 : segOut = 7'b1111001;  // 1
+					4'h2 : segOut = 7'b0100100;  // 2
+					4'h3 : segOut = 7'b0110000;  // 3
+					4'h4 : segOut = 7'b0011001;  // 4
+					4'h5 : segOut = 7'b0010010;  // 5
+					4'h6 : segOut = 7'b0000010;  // 6
+					4'h7 : segOut = 7'b1111000;  // 7
+					4'h8 : segOut = 7'b0000000;  // 8
+					4'h9 : segOut = 7'b0010000;  // 9
+					default : segOut = 7'b0111111;
 				endcase
 			end //end mid number check
 			else if (anodeCount == 0) //low number
 			begin
 				case (DispVal3)
-					4'h0 : segOut <= 7'b1000000;  // 0
-					4'h1 : segOut <= 7'b1111001;  // 1
-					4'h2 : segOut <= 7'b0100100;  // 2
-					4'h3 : segOut <= 7'b0110000;  // 3
-					4'h4 : segOut <= 7'b0011001;  // 4
-					4'h5 : segOut <= 7'b0010010;  // 5
-					4'h6 : segOut <= 7'b0000010;  // 6
-					4'h7 : segOut <= 7'b1111000;  // 7
-					4'h8 : segOut <= 7'b0000000;  // 8
-					4'h9 : segOut <= 7'b0010000;  // 9
-					default : segOut <= 7'b0111111;
+					4'h0 : segOut = 7'b1000000;  // 0
+					4'h1 : segOut = 7'b1111001;  // 1
+					4'h2 : segOut = 7'b0100100;  // 2
+					4'h3 : segOut = 7'b0110000;  // 3
+					4'h4 : segOut = 7'b0011001;  // 4
+					4'h5 : segOut = 7'b0010010;  // 5
+					4'h6 : segOut = 7'b0000010;  // 6
+					4'h7 : segOut = 7'b1111000;  // 7
+					4'h8 : segOut = 7'b0000000;  // 8
+					4'h9 : segOut = 7'b0010000;  // 9
+					default : segOut = 7'b0111111;
 				endcase
 			end //end low number check
 			else //other spot empty	
 			begin
-				segOut <= 7'b1111111;
+				segOut = 7'b1111111;
 			end //end other number check
 		end //end beat clock high
 		else if (isRecord == 1) //is recording, bpm clock is low
@@ -188,24 +188,24 @@ module DisplayController(
 			//if anodeCount = 0, display C
 			if (anodeCount == 2)
 			begin
-				segOut <= 7'b0101111;
+				segOut = 7'b0101111;
 			end
 			else if (anodeCount == 1)
 			begin
-				segOut <= 7'b0000110;
+				segOut = 7'b0000110;
 			end
 			else if (anodeCount == 0)
 			begin
-				segOut <= 7'b1110000;
+				segOut = 7'b1110000;
 			end
 			else //other spot empty	
 			begin
-				segOut <= 7'b1111111;
+				segOut = 7'b1111111;
 			end
 		end // end bpm clock low
 		else //not recording, just low bpm clock
 		begin
-			segOut <= 7'b0111111; //display -
+			segOut = 7'b0111111; //display -
 		end
 	end //end always
 

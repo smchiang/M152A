@@ -28,8 +28,8 @@ module DispCtrlTB;
 	reg			fclk;
 	reg			bclk;
 	//output
-	reg [3:0]	anode;
-	reg [6:0]	segOut;
+	wire [3:0]	anode;
+	wire [6:0]	segOut;
 	
 	DisplayController UUT (
 		.DispVal(DV1),
