@@ -5,5 +5,59 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 117: &lt;<arg fmt="%s" index="1">tempSF</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 133: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 134: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 135: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 136: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 137: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 138: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 139: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 140: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 141: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 142: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 143: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 144: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 145: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 146: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 147: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="82" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 148: <arg fmt="%s" index="1">soundFile</arg> needs <arg fmt="%d" index="2">2</arg> dimensions
+</msg>
+
+<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 21: Module &lt;<arg fmt="%s" index="1">NewSpeakerController</arg>&gt; ignored due to previous errors.
+</msg>
+
 </messages>
 

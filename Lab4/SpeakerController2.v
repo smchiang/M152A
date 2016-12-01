@@ -74,10 +74,35 @@ module NewSpeakerController(
 	reg [15:0] prevRequestedInput;
 	
 	//store position in file
-	reg [15:0] pos [0:25];
+	reg [15:0] pos [0:15];
+	
+	//store loop number - go to 5000
+	reg [14:0] loopCount [0:15];
 	
 	//save sound files
-	reg [15:0] soundFile [0:10000000];
+	
+	/*
+	reg [100:0] soundFile0 [0:100];
+	reg [100:0] soundFile1 [0:100];
+	reg [100:0] soundFile2 [0:100];
+	reg [100:0] soundFile3 [0:100];
+	reg [100:0] soundFile4 [0:100];
+	reg [100:0] soundFile5 [0:100];
+	reg [100:0] soundFile6 [0:100];
+	reg [100:0] soundFile7 [0:100];
+	reg [100:0] soundFile8 [0:100];
+	reg [100:0] soundFile9 [0:100];
+	reg [100:0] soundFileA [0:100];
+	reg [100:0] soundFileB [0:100];
+	reg [100:0] soundFileC [0:100];
+	reg [100:0] soundFileD [0:100];
+	reg [100:0] soundFileE [0:100];
+	reg [100:0] soundFileF [0:100];
+	*/
+	reg [100:0] soundFile [0:100] [0:15];
+	
+	//temp sound
+	//reg [100:0] tempSF [0:100];
 	
 	//temp output
 	reg [20:0] tempOut;
@@ -89,29 +114,38 @@ module NewSpeakerController(
 		requestedInput <= 0;
 		prevRequestedInput <= 0;
 		tempOut <= 0;
-		//set all positions to 1023 (end)
+		tempSF <= 0;
+		//set all positions and loopCount to end value
 		for (i = 0; i < 16; i = i + 1)
 		begin
-			pos[i] <= 8000000;
+			pos[i] <= 8000;
+			loopCount[i] <= 5000;
 		end
 		
 		//read from sound files
-		soundFile[0] = $readmemh("sound0.raw");
-		soundFile[1] = $readmemh("soundA.raw");
-		soundFile[2] = $readmemh("soundB.raw");
-		soundFile[3] = $readmemh("soundC.raw");
-		soundFile[4] = $readmemh("soundD.raw");
-		soundFile[5] = $readmemh("soundE.raw");
-		soundFile[6] = $readmemh("soundF.raw");
-		soundFile[7] = $readmemh("sound0.raw");
-		soundFile[8] = $readmemh("soundA.raw");
-		soundFile[9] = $readmemh("soundB.raw");
-		soundFile[10] = $readmemh("soundA.raw");
-		soundFile[11] = $readmemh("soundB.raw");
-		soundFile[12] = $readmemh("soundC.raw");
-		soundFile[13] = $readmemh("soundD.raw");
-		soundFile[14] = $readmemh("soundE.raw");
-		soundFile[15] = $readmemh("soundF.raw");
+		//setup:
+		/*
+		123A	-->	ABCD
+		456B  -->	EFGAb
+		789C	-->	ABCD
+		0FED	-->	EFGAb
+		*/
+		$readmemh("soundE.raw", soundFile[0]);
+		$readmemh("soundA.raw", soundFile[1]);
+		$readmemh("soundB.raw", soundFile[2]);
+		$readmemh("soundC.raw", soundFile[3]);
+		$readmemh("soundE.raw", soundFile[4]);
+		$readmemh("soundF.raw", soundFile[5]);
+		$readmemh("soundG.raw", soundFile[6]);
+		$readmemh("soundA.raw", soundFile[7]);
+		$readmemh("soundB.raw", soundFile[8]);
+		$readmemh("soundC.raw", soundFile[9]);
+		$readmemh("soundD.raw", soundFile[10]);	//A
+		$readmemh("soundAb.raw", soundFile[11]);	//B
+		$readmemh("soundD.raw", soundFile[12]);	//C
+		$readmemh("soundAb.raw", soundFile[13]);	//D
+		$readmemh("soundG.raw", soundFile[14]);	//E
+		$readmemh("soundF.raw", soundFile[15]);	//F
 	end
 	
 	always @ (posedge clk)
@@ -126,6 +160,27 @@ module NewSpeakerController(
 		//for each index of requestedInput
 		for (i = 0; i < 15; i = i + 1)
 		begin
+		/*
+			case(i)
+				0: tempSF <= soundFile0;
+				1: tempSF <= soundFile1;
+				2: tempSF <= soundFile2;
+				3: tempSF <= soundFile3;
+				4: tempSF <= soundFile4;
+				5: tempSF <= soundFile5;
+				6: tempSF <= soundFile6;
+				7: tempSF <= soundFile7;
+				8: tempSF <= soundFile8;
+				9: tempSF <= soundFile9;
+				10: tempSF <= soundFileA;
+				11: tempSF <= soundFileB;
+				12: tempSF <= soundFileC;
+				13: tempSF <= soundFileD;
+				14: tempSF <= soundFileE;
+				15: tempSF <= soundFileF;
+				default: tempSF <= 0;
+			endcase
+			*/
 			//check if posedge
 			if (requestedInput[i] == 1 && prevRequestedInput[i] == 0)
 			begin
@@ -140,7 +195,7 @@ module NewSpeakerController(
 				pos[i] <= pos[i] + 1;
 			end
 			//check if not at end of buffer
-			else if (pos[i] < 8000000)
+			else if (pos[i] < 8000)
 			begin
 				//add to tempOut
 				for (j = 0; j < 15; j = j + 1)
@@ -148,6 +203,19 @@ module NewSpeakerController(
 					tempOut[j] <= tempOut[j] + soundFile[i][(16*pos[i])+j];
 				end
 				pos[i] <= pos[i] + 1;
+			end
+			//check if need to reloop sound
+			else if (loopCount[i] < 5000)
+			begin
+				//add to tempOut
+				for (j = 0; j < 15; j = j + 1)
+				begin
+					tempOut[j] <= tempOut[j] + soundFile[i][(16*pos[i])+j];
+				end
+				//reset position
+				pos[i] <= 0;
+				//increment loopcount
+				loopCount[i] <= loopCount[i] + 1;
 			end
 		end
 		

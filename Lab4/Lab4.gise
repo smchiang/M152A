@@ -25,6 +25,69 @@
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="speaker_guide.ncd" xil_pn:origination="imported"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1480544852" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1480544852">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1480550111" xil_pn:in_ck="5850141445531256243" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1480550111">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Decoder.v"/>
+      <outfile xil_pn:name="DisplayController.v"/>
+      <outfile xil_pn:name="ShawnWasabi.v"/>
+      <outfile xil_pn:name="SpeakerController2.v"/>
+      <outfile xil_pn:name="SpkrCtrlTB.v"/>
+      <outfile xil_pn:name="c_scale.v"/>
+      <outfile xil_pn:name="debouncer.v"/>
+      <outfile xil_pn:name="decimal_conversion.v"/>
+      <outfile xil_pn:name="looper.v"/>
+      <outfile xil_pn:name="looper_bank.v"/>
+      <outfile xil_pn:name="looper_bank_tb.v"/>
+      <outfile xil_pn:name="looper_tb.v"/>
+      <outfile xil_pn:name="metronome.v"/>
+      <outfile xil_pn:name="metronome_tb.v"/>
+      <outfile xil_pn:name="recorder.v"/>
+      <outfile xil_pn:name="recorder_tb.v"/>
+      <outfile xil_pn:name="speaker_tb.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1480544853" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4307461512265123312" xil_pn:start_ts="1480544853">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1480544853" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="2028633892673732014" xil_pn:start_ts="1480544853">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1480544853" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5207733975147149788" xil_pn:start_ts="1480544853">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1480550111" xil_pn:in_ck="5850141445531256243" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1480550111">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Decoder.v"/>
+      <outfile xil_pn:name="DisplayController.v"/>
+      <outfile xil_pn:name="ShawnWasabi.v"/>
+      <outfile xil_pn:name="SpeakerController2.v"/>
+      <outfile xil_pn:name="SpkrCtrlTB.v"/>
+      <outfile xil_pn:name="c_scale.v"/>
+      <outfile xil_pn:name="debouncer.v"/>
+      <outfile xil_pn:name="decimal_conversion.v"/>
+      <outfile xil_pn:name="looper.v"/>
+      <outfile xil_pn:name="looper_bank.v"/>
+      <outfile xil_pn:name="looper_bank_tb.v"/>
+      <outfile xil_pn:name="looper_tb.v"/>
+      <outfile xil_pn:name="metronome.v"/>
+      <outfile xil_pn:name="metronome_tb.v"/>
+      <outfile xil_pn:name="recorder.v"/>
+      <outfile xil_pn:name="recorder_tb.v"/>
+      <outfile xil_pn:name="speaker_tb.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1480550113" xil_pn:in_ck="5850141445531256243" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9105453533172432993" xil_pn:start_ts="1480550111">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>

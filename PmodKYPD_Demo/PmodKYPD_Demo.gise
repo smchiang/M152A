@@ -73,6 +73,7 @@
     <transform xil_pn:end_ts="1480536932" xil_pn:in_ck="8253708864429330233" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9105453533172432993" xil_pn:start_ts="1480536930">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
   </transforms>
 

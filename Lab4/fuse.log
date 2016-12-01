@@ -1,0 +1,25 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpkctrlTB_isim_beh.exe -prj C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpkctrlTB_beh.prj work.SpkctrlTB work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" into library work
+ERROR:HDLCompiler:69 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 117: <tempSF> is not declared.
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 133: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 134: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 135: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 136: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 137: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 138: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 139: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 140: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 141: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 142: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 143: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 144: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 145: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 146: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 147: soundFile needs 2 dimensions
+ERROR:HDLCompiler:82 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 148: soundFile needs 2 dimensions
+ERROR:HDLCompiler:598 - "C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v" Line 21: Module <NewSpeakerController> ignored due to previous errors.
+Verilog file C:/Users/Sabrina/Documents/CS M152A Final/M152A/Lab4/SpeakerController2.v ignored due to errors
