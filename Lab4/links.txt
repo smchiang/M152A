@@ -1,0 +1,26 @@
+I have too many tabs open on my computer pls halp
+
+Memory stuff:
+https://reference.digilentinc.com/_media/nexys:nexys3:nexys3_rm.pdf
+https://reference.digilentinc.com/reference/programmable-logic/nexys-3/reference-manual
+http://stackoverflow.com/questions/18860626/how-do-i-write-from-a-spartan6-to-the-micron-external-cellular-ram-on-the-nexys3
+http://embsi.blogspot.com/2013/01/how-to-use-cellular-ram-from-micron.html
+https://www.micron.com/parts/psram/cellularram/mt45w8mw16bgx-701-it?pc=%7bBD8A72EA-2DC2-4B88-846E-7B59997A2D97%7d
+https://en.wikipedia.org/wiki/Byte_addressing
+
+2D/3D Arrays
+http://www.asic-world.com/systemverilog/data_types11.html
+http://stackoverflow.com/questions/3011510/how-to-declare-and-use-1d-and-2d-byte-arrays-in-verilog
+
+I2S Reference
+https://reference.digilentinc.com/_media/reference/pmod/pmodi2s/pmodi2s_rm.pdf
+
+File I/O
+http://www.angelfire.com/in/verilogfaq/pli.html
+http://www.asic-world.com/verilog/memory_fsm1.html
+http://verilog.renerta.com/mobile/source/vrg00016.htm
+https://forums.xilinx.com/t5/Synthesis/Problem-with-readmemh-at-synthesis-in-Vivado/td-p/335507
+https://www.xilinx.com/itp/xilinx10/books/docs/xst/xst.pdf
+
+Loop count exceeded
+https://forums.xilinx.com/t5/Virtex-Family-FPGAs/Loop-count-limit-exceeded-Need-help/td-p/98758
